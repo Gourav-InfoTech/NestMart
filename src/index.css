@@ -1,13 +1,56 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* ...................................Appbar............................................ */
+
+.apptopbar{
+    border-bottom: 1px solid #e0e0e0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.appBarDivWidth{
+    display: flex;
+    justify-content: space-between;
+    max-width: 1440px;
+    margin: auto;
 }
+
+
+/* .......................................navbar................................................. */
+
+.navbar{
+    font-family: 'Quicksand', sans-serif;
+    color: #253d4e;
+    font-weight: 800;
+    border-bottom: 1px solid #e0e0e0;
+    border-top: 1px solid #e0e0e0;
+}
+
+.navbar .catButton{
+    background-color: #3bb77e;
+}
+
+.menu li:hover{
+    cursor: pointer;
+    color:#3BB77E;
+}
+
+
+/* .......................Hero Banner....................... */
+
+
+.Hero_Banner{
+
+}
+.Hero_Banner h1{
+    font-family: 'Quicksand', sans-serif;
+    color: #253D4E;
+}
+
