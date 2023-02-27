@@ -2,12 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,700&display=swap');
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
+
+  ::selection{
+    background-color: #3bb77e;
+    color: white;
+  }
+
 
   /* ...................................Appbar............................................ */
 
@@ -42,15 +49,11 @@
     color:#3BB77E;
 }
 
-
-/* .......................Hero Banner....................... */
-
-
-.Hero_Banner{
-
-}
-.Hero_Banner h1{
-    font-family: 'Quicksand', sans-serif;
-    color: #253D4E;
+.common_width{
+    max-width: 1440px;
+    margin: auto;
 }
 
+.section_padding{
+    padding: 30px 0;
+}

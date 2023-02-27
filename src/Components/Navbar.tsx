@@ -26,7 +26,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className='navContact flex items-center'>
-                    <span className='text-4xl mr-3'><IoHeadsetOutline/></span>
+                    <span className='text-4xl mr-3'><IoHeadsetOutline /></span>
                     <div >
                         <h1 className='text-green-600 text-2xl'>3435 - 3534</h1>
                         <p className='text-xs text-zinc-500'>24/7 Support Center</p>

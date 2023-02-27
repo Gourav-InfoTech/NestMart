@@ -43,7 +43,7 @@ const Appbar = () => {
                 <div className="appbottombar">
                     <div className='bottominner appBarDivWidth py-8 flex items-center justify-evenly'>
                         <div>
-                            <Logo src="/Images/NestLogo.svg" />
+                            <Logo src="/Images/nest-logo.svg" />
                         </div>
                         <SearchDiv className='wrapper flex items-center'>
                             <Dropdown />
