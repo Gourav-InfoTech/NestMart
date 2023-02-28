@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import Banner from "./Banner";
+import Banner from "../Components/Banner";
 import PopularProducts from "../container/PopularProducts";
-import DealsOfTheDay from "./DealsOfTheDay";
+import DealsOfTheDay from "../Components/DealsOfTheDay";
 
 const HeroBannerData: HeroBannerDataT = {
   heading: (

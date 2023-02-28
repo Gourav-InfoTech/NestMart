@@ -6,6 +6,8 @@ import ShopByCategory from "./Components/ShopByCategory";
 import Footer from "./Components/footer/Footer";
 import HomeContainer from "./container/HomeContainer";
 import { BrowserRouter } from "react-router-dom";
+import BackToTop from "./Components/BackToTop";
+import TopProducts from "./container/TopProducts";
 
 const App = () => {
   return (
@@ -17,7 +19,9 @@ const App = () => {
         </div>
         <HomeContainer />
         <ShopByCategory />
+        <TopProducts />
         <Footer />
+        <BackToTop />
       </BrowserRouter>
     </>
   );

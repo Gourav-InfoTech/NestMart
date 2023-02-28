@@ -6,13 +6,18 @@ const DodBanner = ({ data }: any) => {
   return (
     <>
       <DodBannerDiv className="Dod_Banner flex flex-col justify-between" image={data.bg}>
+        <div>
         <h1>{data.heading}</h1>
-        <button className="inline-flex flex-grow-0 hover:bg-[#FDC040] hover:gap-2  transition-all duration-500 bg-[#3bb77e]">
+        </div>
+        <div>
+        <button className="flex items-center flex-grow-0 hover:bg-[#FDC040]  transition-all duration-500 bg-[#3bb77e] hello">
           Shop Now
-          <span className="inline-block">
+          <span>
             <HiArrowSmRight />
           </span>
         </button>
+        </div>
+        
       </DodBannerDiv>
     </>
   );
@@ -44,5 +49,12 @@ const DodBannerDiv = styled.div<any>`
     font-weight: 700;
     border-radius: 5px;
     color: whitesmoke;
+  }
+  .hello span{
+    transition: all 0.4s;
+  }
+  .hello:hover span{
+    margin-left: 10px;
+    transition: all 0.4s;
   }
 `;
