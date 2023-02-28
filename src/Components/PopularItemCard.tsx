@@ -1,21 +1,26 @@
 import React from "react";
 import styled from "styled-components";
 import { HiOutlineShoppingCart } from "react-icons/hi2";
+import { Link } from "react-router-dom";
 
 const PopularItemCard = ({ data }: { data: any }) => {
   return (
     <PICard>
       <div>
         <div className="item_image ">
-          <img src={data.image} alt="image" />
+          <Link to={`/detail/${data.id}`}>
+            <img src={data.image} alt="" />
+          </Link>
         </div>
         <p className="text-xs py-2 text-[#adadad]">{data.category}</p>
         <h2 className="pb-2 text-[15px] font-[Quicksand] font-bold text-[#253d4e] leading-5">
           {data.title}
         </h2>
-        <p className="pb-4 text-[#adadad] text-sm">⭐⭐⭐⭐⭐({data.rating.rate})</p>
+        <p className="pb-4 text-[#adadad] text-sm">
+          ⭐⭐⭐⭐⭐({data.rating.rate})
+        </p>
         {/* <p className="text-[#adadad] text-sm">By <span></span> </p> */}
-        </div>
+      </div>
 
       <div className="price_&_button flex justify-between gap-3">
         <p className="text-[#3bb77e] font-bold font-[Quicksand]">
@@ -33,9 +38,9 @@ const PopularItemCard = ({ data }: { data: any }) => {
 export default PopularItemCard;
 
 const PICard = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   padding: 20px 20px;
   border: 1px solid #ececec;

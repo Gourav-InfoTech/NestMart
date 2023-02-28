@@ -36,11 +36,12 @@ const PopularProducts = () => {
             </ul>
           </div>
         </div>
-        <div className="Popular_Items grid grid-cols-5 gap-5">
-          {item.map((itemData, indx) => {
-            return <PopularItemCard key={indx} data={itemData} />;
-          })}
-        </div>
+
+          <div className="Popular_Items grid grid-cols-5 gap-5">
+            {item.map((itemData, indx) => {
+              return <PopularItemCard key={indx} data={itemData} />;
+            })}
+          </div>
       </PopularProductsDiv>
     </>
   );

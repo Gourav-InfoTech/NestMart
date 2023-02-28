@@ -1,6 +1,8 @@
 import React from "react";
 import { FiChevronRight } from "react-icons/fi";
 import styled from "styled-components";
+import { DOD_BANNER } from "../Utils/DATA";
+import DodBanner from "./DodBanner";
 import DodItem from "./DodItem";
 
 const DealsOfTheDay = () => {
@@ -25,6 +27,17 @@ const DealsOfTheDay = () => {
             <DodItem />
             <DodItem />
         </div>
+
+        <DodBanners className="section_padding gap-6">
+          {
+            DOD_BANNER.map((el, indx)=> {
+              return (
+                <DodBanner key={indx} data={el}/>
+              )
+            })
+          }
+          
+        </DodBanners>
       </Dod>
     </>
   );
@@ -46,4 +59,9 @@ const Dod = styled.div`
     color: #9f9f9f;
     font-size: 14px;
   }
+`;
+
+const DodBanners = styled.div`
+  display: flex;
+  justify-content: space-between;
 `;

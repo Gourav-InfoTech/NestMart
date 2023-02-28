@@ -58,3 +58,22 @@ export const FOOTER_DEALS_ARRAY = [
         para: "Within 30 days",
     },
 ]
+
+
+export const DOD_BANNER = [
+    {
+        heading:
+        <>Everyday Fresh & <br /> Clean with Our <br /> Products</>,
+        bg:"Images/dod-banner-1.png"
+    },
+    {
+        heading:<>Make your Breakfast <br />    
+        Healthy and Easy</>,
+        bg:"Images/dod-banner-2.png"
+    },
+    {
+        heading:<>The best Organic <br />
+        Products Online</>,
+        bg:"Images/dod-banner-3.png"
+    }
+]

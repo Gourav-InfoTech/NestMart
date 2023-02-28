@@ -1,14 +1,21 @@
 import React from "react";
 import styled from "styled-components";
 import HomeContent from "../Components/HomeContent";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Detail from "../pages/Detail";
 import Sidebar from "../Components/sidebar/Sidebar";
 
 const HomeContainer = () => {
   return (
-    <TopContainer>
-      <Sidebar />
-      <HomeContent />
-    </TopContainer>
+
+      <TopContainer>
+        <Sidebar />
+        <Routes>
+          <Route path="/" element={<HomeContent />} />
+          <Route path="/detail/:id" element={<Detail />} />
+        </Routes>
+      </TopContainer>
+
   );
 };
 
