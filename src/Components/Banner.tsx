@@ -1,10 +1,12 @@
 import styled from "styled-components";
 import { BiPaperPlane } from "react-icons/bi";
 
-const Banner = ({data}: any) => {
-
+const Banner = ({ data }: any) => {
   return (
-    <HeroDiv className="Hero_Banner" bgImage={data.backgroundImage}>
+    <HeroDiv
+      className="Hero_Banner"
+      bgImage={data.backgroundImage}
+    >
       <div className="banner_inner ">
         <div className="Banner_Text mb-8">
           {data.heading}
@@ -34,7 +36,7 @@ const Banner = ({data}: any) => {
 export default Banner;
 
 const HeroDiv = styled.div<any>`
-  background-image:  ${(props) => `url(${props.bgImage})`};
+  background-image: ${(props) => `url(${props.bgImage})`};
   background-position: center center;
   border-radius: 30px;
   position: relative;
@@ -53,13 +55,12 @@ const HeroDiv = styled.div<any>`
     font-size: small;
   }
 
-  .footer-img{
+  .footer-img {
     position: absolute;
     right: 50px;
     bottom: 0;
     width: 500px;
     height: auto;
-
   }
 `;
 

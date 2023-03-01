@@ -8,14 +8,14 @@ const Detail = () => {
 
   const [idItem, setIdItem] = useState([]);
 
-  const productitem = async () => {
+  const productItem = async () => {
     const data = await fetch(`https://fakestoreapi.com/products/${id.id}`);
     const res = await data.json();
     setIdItem(res);
   };
 
   useEffect(() => {
-    productitem()
+    productItem()
   }, []);
 
 

@@ -5,14 +5,15 @@ import { DOD_BANNER } from "../Utils/DATA";
 import DodBanner from "./DodBanner";
 import DodItem from "./DodItem";
 
+
 const DealsOfTheDay = () => {
+
   return (
     <>
-
-    {/* ------------Dod - Deals of the day----------------- */}
+      {/* ------------Dod - Deals of the day----------------- */}
       <Dod>
-        <div className="Dod_title flex justify-between items-center">
-            <h1>Deals Of The Day</h1>
+        <div className="Dod_title flex justify-between items-center mb-10 ">
+          <h1>Deals Of The Day</h1>
           <button className="flex items-center">
             All Categories
             <span className="ml-2">
@@ -21,22 +22,17 @@ const DealsOfTheDay = () => {
           </button>
         </div>
 
-        <div className="Dod_Item flex gap-7">
-            <DodItem />
-            <DodItem />
-            <DodItem />
-            <DodItem />
+        <div className="Dod_Item flex gap-7" >
+          <DodItem />
+          <DodItem />
+          <DodItem />
+          <DodItem />
         </div>
 
         <DodBanners className="section_padding gap-6">
-          {
-            DOD_BANNER.map((el, indx)=> {
-              return (
-                <DodBanner key={indx} data={el}/>
-              )
-            })
-          }
-          
+          {DOD_BANNER.map((el, indx) => {
+            return <DodBanner key={indx} data={el} />;
+          })}
         </DodBanners>
       </Dod>
     </>
@@ -46,8 +42,7 @@ const DealsOfTheDay = () => {
 export default DealsOfTheDay;
 
 const Dod = styled.div`
-
-.Dod_title h1 {
+  .Dod_title h1 {
     color: #253d4e;
     font-family: "Quicksand", sans-serif;
     font-size: 27px;

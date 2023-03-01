@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import PopularItemCard from "../Components/PopularItemCard";
+import { Product_Api } from "../Utils/Api";
 
 const PopularProducts = () => {
   const [item, setItem] = useState([]);
 
   const ProductApi = async () => {
-    const data = await fetch("https://fakestoreapi.com/products");
+    const data = await fetch(Product_Api);
     const res = await data.json();
     setItem(res);
   };
@@ -15,7 +16,7 @@ const PopularProducts = () => {
     ProductApi();
   }, []);
 
-  console.log(item);
+  // console.log(item);
 
   return (
     <>
@@ -37,11 +38,11 @@ const PopularProducts = () => {
           </div>
         </div>
 
-          <div className="Popular_Items grid grid-cols-5 gap-5">
-            {item.map((itemData, indx) => {
-              return <PopularItemCard key={indx} data={itemData} />;
-            })}
-          </div>
+        <div className="Popular_Items grid grid-cols-5 gap-5">
+          {item.map((itemData, indx) => {
+            return <PopularItemCard key={indx} data={itemData} />;
+          })}
+        </div>
       </PopularProductsDiv>
     </>
   );

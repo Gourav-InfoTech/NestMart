@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import Appbar from "./Components/Appbar";
 import Navbar from "./Components/Navbar";
@@ -8,6 +8,7 @@ import HomeContainer from "./container/HomeContainer";
 import { BrowserRouter } from "react-router-dom";
 import BackToTop from "./Components/BackToTop";
 import TopProducts from "./container/TopProducts";
+
 
 const App = () => {
   return (

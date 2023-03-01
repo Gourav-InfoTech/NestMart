@@ -1,42 +1,54 @@
 import React from "react";
 import styled from "styled-components";
 
-const TopItem = () => {
+const TopItem = ({ details }: any) => {
+  // console.log(details, "VVVV");
+
   return (
     <TopItemDiv>
       <div className="img">
-        <img src="Images/mangojuice.jpg" alt="" />
+        <img src={details.image} alt="" />
       </div>
       <div className="dod_item_detail mx-5 bg-white rounded-2xl ">
-              <div>
-                <h2 className="pb-2 text-[15px] font-[Quicksand] font-bold text-[#253d4e] leading-5">
-                Nestle Original Coffee-Mate Coffee Creamer
-                </h2>
-                <p className=" text-[#adadad] text-sm">⭐⭐⭐⭐⭐ (5)</p>
-              </div>
+        <div>
+          <h2 className="pb-2 text-[15px] font-[Quicksand] font-bold text-[#253d4e] leading-5">
+            {details.title}
+          </h2>
+          <p className=" text-[#adadad] text-sm">
+            ⭐⭐⭐⭐⭐ {details.rating.rate}
+          </p>
+        </div>
 
-              <div className="price_&">
-                <p className="text-[#3bb77e] font-bold font-[Quicksand]">
-                  $32.25
-                </p>
-              </div>
-          </div>
+        <div className="price_&">
+          <p className="text-[#3bb77e] font-bold font-[Quicksand]">
+            ${details.price}
+          </p>
+        </div>
+      </div>
     </TopItemDiv>
   );
 };
 
-export default TopItem;
+export default React.memo(TopItem);
 
 const TopItemDiv = styled.div`
   display: flex;
-    justify-items: center;
+  justify-items: center;
+  align-items: center;
   gap: 5px;
 
   margin-bottom: 20px;
 
-  .img{
-    width: 50%;
+  .img {
+    background-color: grey;
+    width: 15%;
   }
+
+  .dod_item_detail{
+    width: 80%;
+  }
+
+
 
   .iteminfo h1 {
     color: #3bb77e;
