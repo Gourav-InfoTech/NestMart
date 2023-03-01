@@ -1,2 +1,1 @@
-export const Product_Api: string = "https://fakestoreapi.com/products";
-
+export const Product_Api: string = "https://fakestoreapi.com";

@@ -7,7 +7,7 @@ const PopularProducts = () => {
   const [item, setItem] = useState([]);
 
   const ProductApi = async () => {
-    const data = await fetch(Product_Api);
+    const data = await fetch(Product_Api+"/products");
     const res = await data.json();
     setItem(res);
   };

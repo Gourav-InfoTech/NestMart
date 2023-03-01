@@ -1,17 +1,37 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { FiChevronRight } from "react-icons/fi";
 import styled from "styled-components";
 import { DOD_BANNER } from "../Utils/DATA";
 import DodBanner from "./DodBanner";
 import DodItem from "./DodItem";
+import { useAnimation, motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
+const dodBoxVariant = {
+  visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+  hidden: { opacity: 0, y: 100 },
+};
 
 const DealsOfTheDay = () => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
 
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }else{
+      controls.start("hidden")
+    }
+  }, [controls, inView]);
   return (
     <>
       {/* ------------Dod - Deals of the day----------------- */}
-      <Dod>
+      <Dod
+        ref={ref}
+        animate={controls}
+        initial="hidden"
+        variants={dodBoxVariant}
+      >
         <div className="Dod_title flex justify-between items-center mb-10 ">
           <h1>Deals Of The Day</h1>
           <button className="flex items-center">
@@ -22,7 +42,7 @@ const DealsOfTheDay = () => {
           </button>
         </div>
 
-        <div className="Dod_Item flex gap-7" >
+        <div className="Dod_Item flex gap-7">
           <DodItem />
           <DodItem />
           <DodItem />
@@ -41,7 +61,7 @@ const DealsOfTheDay = () => {
 
 export default DealsOfTheDay;
 
-const Dod = styled.div`
+const Dod = styled(motion.div)`
   .Dod_title h1 {
     color: #253d4e;
     font-family: "Quicksand", sans-serif;

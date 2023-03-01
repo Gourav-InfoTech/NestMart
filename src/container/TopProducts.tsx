@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import TopProductCard from "../Components/TopProductCard";
+import { Product_Api } from "../Utils/Api";
 
 const TopProducts = () => {
   const [topItems, setTopItems] = useState([]);
   const [electronics, setElectronics] = useState([]);
   const [women, setWomen] = useState([])
-  const [men, setMen] = useState([])
-  const [first, setfirst] = useState([])
+  const [men, setMen] = useState([])  
 
 
   const topItemsApi = async () => {
-    const data = await fetch("https://fakestoreapi.com/products");
+    const data = await fetch(Product_Api+"/products");
     const res = await data.json();
     setTopItems(res);
   };

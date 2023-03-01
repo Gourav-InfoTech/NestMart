@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ItemDetail from "../Components/ItemDetail";
 import { useParams } from "react-router-dom";
+import { Product_Api } from "../Utils/Api";
 
 const Detail = () => {
   const id = useParams();
@@ -9,15 +10,14 @@ const Detail = () => {
   const [idItem, setIdItem] = useState([]);
 
   const productItem = async () => {
-    const data = await fetch(`https://fakestoreapi.com/products/${id.id}`);
+    const data = await fetch(Product_Api + "/products/" + `${id.id}`);
     const res = await data.json();
     setIdItem(res);
   };
 
   useEffect(() => {
-    productItem()
+    productItem();
   }, []);
-
 
   return (
     <div className="common_width section_padding">
