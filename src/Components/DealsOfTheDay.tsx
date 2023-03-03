@@ -33,16 +33,6 @@ const DealsOfTheDay = () => {
     oldScrollY = window.scrollY;
   };
 
-  // useEffect(() => {
-  //   // if (inView) {
-  //   //   controls.start("visible");
-  //   // } else {
-  //   //   controls.start("hidden");
-  //   // }
-  //   // if (!inView) {
-  //   //   controls.start("hidden");
-  //   // }
-  // }, [controls, inView]);
   return (
     <>
       {/* ------------Dod - Deals of the day----------------- */}

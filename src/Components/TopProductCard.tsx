@@ -4,25 +4,16 @@ import TopItem from "./TopItem";
 
 
 const TopProductCard = ({ title, data }: any) => {
- 
-  // useEffect(()=>{
-  // if(inView){
-  //   controls.start("visible")
-  // }else{
-  //   controls.start("hidden")
-  // }
-  // },[controls,inView])
+
 
   return (
     <Box>
       <h1 className="box_title mb-[40px] pb-3">{title} </h1>
       <div>
         {data.slice(0, 3).map((item: any, indx: any) => {
-          // console.log(item, "MM");
 
           return (
             <TopItem key={indx} details={item} />
-            // <div>hello</div>
           );
         })}
       </div>

@@ -44,9 +44,9 @@ const TopProducts = () => {
     topItemsApi();
   }, []);
 
-  useEffect(() => {
-    console.log(topItems);
-  }, [topItems]);
+  // useEffect(() => {
+  //   console.log(topItems);
+  // }, [topItems]);
 
   useEffect(() => {
     setElectronics(topItems.filter((el: any) => el.category === "electronics"));

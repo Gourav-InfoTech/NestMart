@@ -16,8 +16,6 @@ const PopularProducts = () => {
     ProductApi();
   }, []);
 
-  // console.log(item);
-
   return (
     <>
       <PopularProductsDiv className="section_padding">
