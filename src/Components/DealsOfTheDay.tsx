@@ -8,26 +8,46 @@ import { useAnimation, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 const dodBoxVariant = {
-  visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
   hidden: { opacity: 0, y: 100 },
 };
 
 const DealsOfTheDay = () => {
   const controls = useAnimation();
-  const [ref, inView] = useInView();
+  const [dodRef, inView] = useInView();
+  let oldScrollY = window.scrollY;
+  let targetScrollY = window.scrollY;
 
-  useEffect(() => {
-    if (inView) {
+  console.log(oldScrollY, "oooooooooo");
+
+  window.onscroll = function (e) {
+    if (oldScrollY < window.scrollY && inView) {
       controls.start("visible");
-    }else{
-      controls.start("hidden")
+      targetScrollY = window.scrollY;
+      console.log(targetScrollY, "tttttttttttttttt");
+    } else if (oldScrollY > window.scrollY) {
+      controls.start("visible");
+    } else if (targetScrollY > window.scrollY && !inView) {
+      controls.start("hidden");
     }
-  }, [controls, inView]);
+    oldScrollY = window.scrollY;
+  };
+
+  // useEffect(() => {
+  //   // if (inView) {
+  //   //   controls.start("visible");
+  //   // } else {
+  //   //   controls.start("hidden");
+  //   // }
+  //   // if (!inView) {
+  //   //   controls.start("hidden");
+  //   // }
+  // }, [controls, inView]);
   return (
     <>
       {/* ------------Dod - Deals of the day----------------- */}
       <Dod
-        ref={ref}
+        ref={dodRef}
         animate={controls}
         initial="hidden"
         variants={dodBoxVariant}
