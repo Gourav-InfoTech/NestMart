@@ -56,6 +56,10 @@ const PopularProductsDiv = styled.div`
     font-weight: bold;
   }
 
+  .Popular_Items{
+    min-height: 500px;
+  }
+
   .Popular_P_Menu li {
     cursor: pointer;
     color: #253d4e;

@@ -6,7 +6,7 @@ import { useAnimation, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 const topItemVariant = {
-  visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
   hidden: { opacity: 0, y: 100 },
 };
 
@@ -16,23 +16,9 @@ const TopProducts = () => {
   const [women, setWomen] = useState([]);
   const [men, setMen] = useState([]);
 
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
-
-  let oldScrollY = window.scrollY;
-  let targetScrollY = window.scrollY;
-
-  window.onscroll = function (e) {
-    if (oldScrollY < window.scrollY && inView) {
-      controls.start("visible");
-      targetScrollY = window.scrollY;
-    } else if (oldScrollY > window.scrollY) {
-      controls.start("visible");
-    } else if (targetScrollY > window.scrollY && !inView) {
-      controls.start("hidden");
-    }
-    oldScrollY = window.scrollY;
-  };
+  const [ref, inView] = useInView({
+    triggerOnce: true
+  });
 
   const topItemsApi = async () => {
     const data = await fetch(Product_Api + "/products");
@@ -44,9 +30,6 @@ const TopProducts = () => {
     topItemsApi();
   }, []);
 
-  // useEffect(() => {
-  //   console.log(topItems);
-  // }, [topItems]);
 
   useEffect(() => {
     setElectronics(topItems.filter((el: any) => el.category === "electronics"));
@@ -57,7 +40,7 @@ const TopProducts = () => {
   return (
     <TopProductsDiv
       ref={ref}
-      animate={controls}
+      animate={inView ? "visible" : "hidden"}
       variants={topItemVariant}
       initial="hidden"
       className="flex common_width section_padding"

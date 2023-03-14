@@ -47,8 +47,6 @@ const TopItemDiv = styled.div`
     width: 80%;
   }
 
-
-
   .iteminfo h1 {
     color: #3bb77e;
     font-family: "Quicksand";
